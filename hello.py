@@ -1,1 +1,8 @@
-a6c398ac-c603-11f0-a965-bcfce74c4453
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+def hello():
+    print("Hello, I'm a Rockstar Programmer!")
+    
+if __name__ == '__main__':
+    hello()
