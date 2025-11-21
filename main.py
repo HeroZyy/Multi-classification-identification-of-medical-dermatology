@@ -1,1 +1,8 @@
-30b4c81d-c688-11f0-9e53-bcfce74c4453
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+def main():
+    print("Hello World!")
+
+if __name__ == '__main__':
+    main()
