@@ -1,6 +1,6 @@
-# 🔬 SwinTransformer消融实验完整分析报告
+# 🔬 SwinTransformer + Focal Loss + 双分支结构的消融实验完整分析报告
 
-<div align="right">
+<div align="left">
   <strong>中文</strong> | <a href="README_EN.md">English</a>
 </div>
 
@@ -368,6 +368,58 @@ print(f"预测类别: {predicted_class}, 置信度: {confidence:.3f}")
 - **简单有效**: `vit_focal/BCN20000_vit_focal_best.pth` (90.73%)
 
 详细使用说明请参考 `models/README.md`
+
+---
+
+## 📊 可视化结果
+
+### 训练曲线
+
+![训练曲线](results/training_curves.png)
+
+**分析**:
+- 平滑收敛，无过拟合现象
+- 验证准确率稳定在~98.90%
+- 在第26轮早停（patience=5）
+- 训练过程稳定可靠
+
+### 综合指标对比
+
+![综合指标对比](results/comprehensive_metrics.png)
+
+**亮点**:
+- Swin Dual-Branch在所有指标上都达到最高分
+- 黑色素瘤F1分数显著提升
+- 两个数据集上表现均衡
+
+### 跨数据集对比
+
+![跨数据集对比](results/cross_dataset_comparison.png)
+
+**关键发现**:
+- 在BCN20000和HAM10000上表现一致
+- HAM10000上达到卓越的98.90%准确率
+- 模型泛化能力强
+
+### 混淆矩阵（消融研究）
+
+![混淆矩阵](results/ablation_confusion_matrices_combined.png)
+
+**观察**:
+- 从基线到最终模型逐步改进
+- MEL和NV类别之间的混淆减少
+- 少数类别分类效果提升
+
+### Grad-CAM可视化
+
+![Grad-CAM](results/ablation_gradcam.png)
+
+**可解释性**:
+- 模型关注相关病变区域
+- 注意力图突出诊断特征
+- 验证模型决策过程的合理性
+
+---
 
 ## 🎯 结论
 

@@ -1,4 +1,4 @@
-# 🔬 Swin Transformer + Focal Loss for Skin Lesion Classification
+# 🔬 Swin Transformer + Focal Loss + Dual-Branch for Skin Lesion Classification
 
 <div align="right">
   <a href="README.md">中文</a> | <strong>English</strong>
@@ -398,6 +398,56 @@ FL(p_t) = -α(1-p_t)^γ log(p_t)
 - ✅ Exceptional melanoma detection (F1: 0.974-0.977)
 - ✅ Balanced performance across all classes (Macro F1: 0.930-0.984)
 - ✅ Significant improvement over baseline models
+
+---
+
+## 📊 Visualizations
+
+### Training Curves
+
+![Training Curves](results/training_curves.png)
+
+**Analysis**:
+- Smooth convergence without overfitting
+- Validation accuracy plateaus at ~98.90%
+- Early stopping at epoch 26 (patience=5)
+- Stable training process
+
+### Comprehensive Metrics Comparison
+
+![Comprehensive Metrics](results/comprehensive_metrics.png)
+
+**Highlights**:
+- Swin Dual-Branch achieves the highest scores across all metrics
+- Significant improvement in melanoma F1 score
+- Balanced performance on both datasets
+
+### Cross-Dataset Comparison
+
+![Cross-Dataset Comparison](results/cross_dataset_comparison.png)
+
+**Key Findings**:
+- Consistent performance across BCN20000 and HAM10000
+- HAM10000 shows exceptional results (98.90%)
+- Model generalizes well to different datasets
+
+### Confusion Matrices (Ablation Study)
+
+![Confusion Matrices](results/ablation_confusion_matrices_combined.png)
+
+**Observations**:
+- Progressive improvement from baseline to final model
+- Reduced confusion between MEL and NV classes
+- Better classification of minority classes
+
+### Grad-CAM Visualization
+
+![Grad-CAM](results/ablation_gradcam.png)
+
+**Interpretability**:
+- Model focuses on relevant lesion regions
+- Attention maps highlight diagnostic features
+- Validates model's decision-making process
 
 ---
 
