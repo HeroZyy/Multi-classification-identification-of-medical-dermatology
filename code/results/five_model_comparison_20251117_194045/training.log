@@ -1,0 +1,142 @@
+2025-11-17 19:40:45,683 - INFO - 设备: cuda
+2025-11-17 19:40:45,683 - INFO - 输出目录: results/five_model_comparison_20251117_194045
+2025-11-17 19:40:45,683 - INFO - 训练配置: Epochs=40, Batch=32, 早停=禁用 (跑满40轮)
+2025-11-17 19:40:45,683 - INFO - BCN20000训练模型: ['ViT_Base']
+2025-11-17 19:40:45,683 - INFO - HAM10000训练模型: ['DenseNet121', 'EfficientNet_B4', 'ViT_Base']
+2025-11-17 19:40:45,684 - INFO - 
+################################################################################
+2025-11-17 19:40:45,684 - INFO - # 数据集: BCN20000
+2025-11-17 19:40:45,684 - INFO - ################################################################################
+2025-11-17 19:40:45,684 - INFO - 
+============================================================
+2025-11-17 19:40:45,684 - INFO - 开始在 BCN20000 上训练五组模型
+2025-11-17 19:40:45,684 - INFO - ============================================================
+2025-11-17 19:40:45,684 - ERROR - 数据集 BCN20000 训练失败: [Errno 2] No such file or directory: 'datasets/BCN20000/bcn20000.csv'
+2025-11-17 19:40:45,685 - ERROR - Traceback (most recent call last):
+  File "/root/autodl-tmp/app/code/./five_model_comparison_lightweight.py", line 400, in train_on_dataset
+    train_data, val_data, test_data = load_dataset(dataset_name)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/app/code/./five_model_comparison_lightweight.py", line 169, in load_dataset
+    metadata = pd.read_csv(os.path.join(bcn_path, 'bcn20000.csv'))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'datasets/BCN20000/bcn20000.csv'
+
+2025-11-17 19:40:45,685 - ERROR - BCN20000 训练失败: [Errno 2] No such file or directory: 'datasets/BCN20000/bcn20000.csv'
+2025-11-17 19:40:45,686 - ERROR - Traceback (most recent call last):
+  File "/root/autodl-tmp/app/code/./five_model_comparison_lightweight.py", line 656, in main
+    results = train_on_dataset(dataset, config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/app/code/./five_model_comparison_lightweight.py", line 400, in train_on_dataset
+    train_data, val_data, test_data = load_dataset(dataset_name)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/app/code/./five_model_comparison_lightweight.py", line 169, in load_dataset
+    metadata = pd.read_csv(os.path.join(bcn_path, 'bcn20000.csv'))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'datasets/BCN20000/bcn20000.csv'
+
+2025-11-17 19:40:45,686 - INFO - 
+################################################################################
+2025-11-17 19:40:45,686 - INFO - # 数据集: HAM10000
+2025-11-17 19:40:45,686 - INFO - ################################################################################
+2025-11-17 19:40:45,686 - INFO - 
+============================================================
+2025-11-17 19:40:45,686 - INFO - 开始在 HAM10000 上训练五组模型
+2025-11-17 19:40:45,686 - INFO - ============================================================
+2025-11-17 19:40:45,686 - ERROR - 数据集 HAM10000 训练失败: [Errno 2] No such file or directory: 'datasets/HAM10000_clean/ISIC2018_splits/HAM_clean.csv'
+2025-11-17 19:40:45,686 - ERROR - Traceback (most recent call last):
+  File "/root/autodl-tmp/app/code/./five_model_comparison_lightweight.py", line 400, in train_on_dataset
+    train_data, val_data, test_data = load_dataset(dataset_name)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/app/code/./five_model_comparison_lightweight.py", line 190, in load_dataset
+    metadata = pd.read_csv('datasets/HAM10000_clean/ISIC2018_splits/HAM_clean.csv')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'datasets/HAM10000_clean/ISIC2018_splits/HAM_clean.csv'
+
+2025-11-17 19:40:45,686 - ERROR - HAM10000 训练失败: [Errno 2] No such file or directory: 'datasets/HAM10000_clean/ISIC2018_splits/HAM_clean.csv'
+2025-11-17 19:40:45,687 - ERROR - Traceback (most recent call last):
+  File "/root/autodl-tmp/app/code/./five_model_comparison_lightweight.py", line 656, in main
+    results = train_on_dataset(dataset, config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/app/code/./five_model_comparison_lightweight.py", line 400, in train_on_dataset
+    train_data, val_data, test_data = load_dataset(dataset_name)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/app/code/./five_model_comparison_lightweight.py", line 190, in load_dataset
+    metadata = pd.read_csv('datasets/HAM10000_clean/ISIC2018_splits/HAM_clean.csv')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'datasets/HAM10000_clean/ISIC2018_splits/HAM_clean.csv'
+
+2025-11-17 19:40:45,687 - ERROR - 保存结果失败: string indices must be integers, not 'str'
+2025-11-17 19:40:45,687 - ERROR - Traceback (most recent call last):
+  File "/root/autodl-tmp/app/code/./five_model_comparison_lightweight.py", line 670, in main
+    save_results(all_results, config)
+  File "/root/autodl-tmp/app/code/./five_model_comparison_lightweight.py", line 494, in save_results
+    'Accuracy': f"{metrics['accuracy']:.2f}%",
+                   ~~~~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+2025-11-17 19:40:45,687 - INFO - 
+================================================================================
+2025-11-17 19:40:45,687 - INFO - ✅ 所有实验完成!
+2025-11-17 19:40:45,687 - INFO - 总用时: 0.00小时 (0.0分钟)
+2025-11-17 19:40:45,687 - INFO - 结果保存在: results/five_model_comparison_20251117_194045
+2025-11-17 19:40:45,687 - INFO - ================================================================================

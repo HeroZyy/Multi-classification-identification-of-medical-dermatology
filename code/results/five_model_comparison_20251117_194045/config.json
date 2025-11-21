@@ -1,0 +1,13 @@
+{
+    "epochs": 40,
+    "batch_size": 32,
+    "learning_rate": 0.0001,
+    "patience": 7,
+    "models": {
+        "ViT_Base": "vit_base_patch16_224",
+        "EfficientNet_B4": "efficientnet_b4",
+        "ResNet50": "resnet50",
+        "DenseNet121": "densenet121"
+    },
+    "device": "cuda"
+}
