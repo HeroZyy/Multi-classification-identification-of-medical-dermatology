@@ -1,4 +1,4 @@
-# 🔬 SwinTransformer + Focal Loss + 双分支结构的消融实验完整分析报告
+# SwinTransformer双分支结构的消融实验
 
 <div align="left">
   <strong>中文</strong> | <a href="README_EN.md">English</a>
